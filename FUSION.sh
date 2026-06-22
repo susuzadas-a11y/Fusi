@@ -37,7 +37,6 @@ menu_replay() {
                 else
                     echo "Nenhum arquivo JSON encontrado."
                 fi
-                read -p "Pressione Enter para continuar..."
                 ;;
             0) 
                 break;;
@@ -86,6 +85,14 @@ conectar_wifi() {
     echo "Digite a porta:"
     read PORTA
 
+    echo "Digite o código de pareamento:"
+    read CODIGO
+
+    echo ""
+    echo "IP: $IP"
+    echo "Porta: $PORTA"
+    echo "Código de pareamento: $CODIGO"
+
     echo "Conectando via ADB..."
     adb connect $IP:$PORTA
     echo "Dispositivos conectados:"
@@ -98,7 +105,6 @@ parear() {
 
     echo "PAREAMENTO"
     echo "Função em desenvolvimento"
-
     read -p "Pressione Enter para continuar..."
 }
 
@@ -132,4 +138,6 @@ do
         6) exit;;
         *) echo "Opção inválida";;
     esac
-done
+
+    read -p "Pressione Enter para continuar..."
+donedone
